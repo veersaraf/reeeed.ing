@@ -608,3 +608,24 @@ html, body {
     display: none;
   }
 } 
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hero-cta-desktop-order {
+  order: 2;
+}
+.hero-description {
+  order: 1;
+}
+@media (max-width: 768px) {
+  .hero-left {
+    flex-direction: column;
+  }
+  .hero-cta-desktop-order,
+  .hero-description {
+    order: unset;
+  }
+} 

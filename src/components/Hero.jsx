@@ -11,12 +11,12 @@ const Hero = () => {
         <div className="hero-left">
           <h1 className="hero-title">Reed</h1>
           <h2 className="hero-subtitle">Books that think with you</h2>
-          <button className="hero-cta" onClick={handleTestFlightClick}>
-            Get TestFlight
-          </button>
           <p className="hero-description">
             Most books contain a few great ideas hidden in hundreds of pages. Reed uncovers them, makes them interactive, and helps you remember what matters.
           </p>
+          <button className="hero-cta hero-cta-desktop-order" onClick={handleTestFlightClick}>
+            Get TestFlight
+          </button>
         </div>
         <div className="hero-right hero-mockups">
           <div className="phone-mockups">
