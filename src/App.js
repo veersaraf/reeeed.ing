@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 
 const Why = () => (
-  <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+  <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'top', overflow: 'hidden', paddingTop: '7rem' }}>
     {/* <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>Why</h1> */}
     <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: 500, textAlign: 'left' }}>
       Reed was built on a simple observation: the spark of insight from a finished book often fades within weeks. The knowledge people spend hours consuming simply doesn't stick. This isn't a failure of memory, but a failure of method. Passive reading was never designed for long-term retention.
