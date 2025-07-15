@@ -12,6 +12,11 @@ const Why = () => (
     <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: 500, textAlign: 'left' }}>
       The app was therefore engineered around a single principle: to truly learn something, one must interact with it. By breaking books down into core concepts and providing tools to challenge, connect, and reflect on those ideas, Reed was designed to transform reading from a passive act of consumption into an active process of understanding. It was created to turn fleeting insights into lasting knowledge.  
     </p>
+    <div style={{alignItems: 'left'}}> 
+      <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: 500, textAlign: 'left' }}>
+      - 0to42 Team
+      </p>
+    </div>
   </div>
 );
 
