@@ -1,0 +1,547 @@
+@font-face {
+  font-family: 'Newsreader';
+  src: url('../../public/fonts/newsreader.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  font-family: 'Newsreader', serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Navigation */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(250, 250, 250, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.nav-link:hover {
+  color: #1a1a1a;
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero {
+  padding: 0rem 2rem 1rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  height: 100%;
+  max-height: 100vh;
+}
+
+.hero-left {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #464646;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.1rem;
+  line-height: .2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #4a4a4a;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.hero-cta {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-cta:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero-cta:active {
+  transform: translateY(0);
+}
+
+/* Phone Mockups */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.3s forwards;
+}
+
+.phone-mockups {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.phone {
+  position: absolute;
+  width: 250px;
+  height: 510px;
+  background: #1a1a1a;
+  border-radius: 40px;
+  padding: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.phone-1 {
+  transform: rotate(-5deg) translateX(-30px);
+  z-index: 2;
+}
+
+.phone-2 {
+  transform: rotate(5deg) translateX(110px);
+  z-index: 1;
+}
+
+/* .phone:hover {
+  transform: rotate(-5deg) translateX(-1px) translateY(-10px);
+}
+
+.phone-2:hover {
+  transform: rotate(5deg) translateX(30px) translateY(-10px);
+} */
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #f8f9fa;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+}
+
+.mock-app {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+
+.mock-time {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.mock-battery {
+  width: 24px;
+  height: 12px;
+  border: 1px solid #1a1a1a;
+  border-radius: 2px;
+  position: relative;
+}
+
+.mock-battery::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 6px;
+  background: #4ade80;
+  border-radius: 1px;
+}
+
+.mock-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mock-book-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.mock-author {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.mock-progress {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 60%;
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 3px;
+}
+
+.mock-progress span {
+  font-size: 14px;
+  color: #666;
+}
+
+.mock-idea {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.idea-tag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.idea-text {
+  font-size: 14px;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+/* Phone 2 specific content */
+.mock-question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.mock-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mock-option {
+  padding: 12px 16px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mock-option.selected {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.mock-feedback {
+  background: #ecfdf5;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid #10b981;
+}
+
+.feedback-correct {
+  font-size: 14px;
+  font-weight: 600;
+  color: #065f46;
+  margin-bottom: 4px;
+}
+
+.feedback-text {
+  font-size: 13px;
+  color: #047857;
+  line-height: 1.4;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 1rem;
+  }
+  
+  .phone {
+    width: 220px;
+    height: 450px;
+  }
+  
+  .phone-mockups {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem;
+  }
+  
+  .hero {
+    padding: 0.5rem 1rem 2rem;
+    overflow: hidden;
+  }
+  
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    order: 1;
+  }
+  
+  .hero-right {
+    order: 2;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    order: 1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    order: 2;
+  }
+  
+  .hero-description {
+    font-size: 1.125rem;
+    max-width: 100%;
+    order: 4;
+  }
+  
+  .hero-cta {
+    order: 5;
+  }
+  
+
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .hero-description {
+    font-size: 1.125rem;
+    max-width: 100%;
+  }
+  
+  .phone {
+    width: 200px;
+    height: 410px;
+  }
+  
+  .phone-mockups {
+    height: 450px;
+  }
+  
+  .phone-1 {
+    transform: rotate(-3deg) translateX(-30px);
+  }
+  
+  .phone-2 {
+    transform: rotate(3deg) translateX(80px);
+  }
+  
+  .mock-app {
+    padding: 16px;
+  }
+  
+  .mock-book-title {
+    font-size: 20px;
+  }
+  
+  .mock-question {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .phone {
+    width: 160px;
+    height: 330px;
+  }
+  
+  .phone-mockups {
+    height: 360px;
+  }
+  
+  .mock-app {
+    padding: 12px;
+  }
+  
+  .mock-header {
+    margin-bottom: 20px;
+  }
+  
+  .mock-book-title {
+    font-size: 18px;
+  }
+  
+  .mock-question {
+    font-size: 14px;
+  }
+  
+  .idea-text, .mock-option {
+    font-size: 12px;
+  }
+}
+
+/* Subtle parallax effect on scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .phone-mockups {
+    transform: translateZ(0);
+  }
+}
+
+/* Flicker animation for footer */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+} 
