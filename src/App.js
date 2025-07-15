@@ -4,16 +4,16 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 
 const Why = () => (
-  <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'top', overflow: 'hidden', paddingTop: '7rem' }}>
-    {/* <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>Why</h1> */}
-    <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: 500, textAlign: 'left' }}>
+  <div className="why-text">
+    {/* <h1 className="why-title">Why</h1> */}
+    <p className="why-paragraph">
       Reed was built on a simple observation: the spark of insight from a finished book often fades within weeks. The knowledge people spend hours consuming simply doesn't stick. This isn't a failure of memory, but a failure of method. Passive reading was never designed for long-term retention.
     </p>
-    <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: 500, textAlign: 'left' }}>
+    <p className="why-paragraph">
       The app was therefore engineered around a single principle: to truly learn something, one must interact with it. By breaking books down into core concepts and providing tools to challenge, connect, and reflect on those ideas, Reed was designed to transform reading from a passive act of consumption into an active process of understanding. It was created to turn fleeting insights into lasting knowledge.  
     </p>
-    <div style={{alignItems: 'left'}}> 
-      <p style={{ fontSize: '1.2rem', color: '#444', maxWidth: 500, textAlign: 'left' }}>
+    <div className="why-signature"> 
+      <p className="why-signature-text">
       - 0to42 Team
       </p>
     </div>
