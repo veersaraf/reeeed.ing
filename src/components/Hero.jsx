@@ -1,45 +1,31 @@
 import React from 'react';
 
-const Hero = () => {
+export const Hero = () => {
   const handleTestFlightClick = () => {
     window.open('https://testflight.apple.com', '_blank');
   };
 
   return (
     <section className="hero">
-      <div className="hero-container">
-        <div className="hero-left">
-          <h1 className="hero-title">Reed</h1>
-          <h2 className="hero-subtitle">Books that think with you</h2>
-          <p className="hero-description">
-            Most books contain a few great ideas hidden in hundreds of pages. Reed uncovers them, makes them interactive, and helps you remember what matters.
-          </p>
-          <button className="hero-cta hero-cta-desktop-order" onClick={handleTestFlightClick}>
-            Get TestFlight
-          </button>
-        </div>
-        <div className="hero-right hero-mockups">
-          <div className="phone-mockups">
-            <div className="phone phone-1">
-              <div className="phone-screen">
-                <img 
-                  src="/images/screenshot1.PNG" 
-                  alt="Reed App Screenshot 1" 
-                  style={{ width: '100%', height: '100%', objectFit: 'fill', borderRadius: '32px' }}
-                />
-              </div>
-            </div>
-            <div className="phone phone-2">
-              <div className="phone-screen">
-                <img 
-                  src="/images/screenshot2.PNG" 
-                  alt="Reed App Screenshot 2" 
-                  style={{ width: '100%', height: '100%', objectFit: 'fill', borderRadius: '32px' }}
-                />
-              </div>
-            </div>
+      <div className="reed-logo">Reed</div>
+      <div className="hero-content">
+        <div className="hero-phone">
+          <div className="phone-frame">
+            <video 
+              src="/reedVid.MP4" 
+              alt="Reed App Demo" 
+              className="phone-screen-img" 
+              autoPlay 
+              muted 
+              loop
+              playsInline
+            />
           </div>
         </div>
+        <h1 className="hero-headline">Books, that think with you</h1>
+        <button className="hero-cta" onClick={handleTestFlightClick}>
+          Get TestFlight
+        </button>
       </div>
     </section>
   );

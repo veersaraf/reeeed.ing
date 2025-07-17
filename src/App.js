@@ -1,39 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import Navigation from './components/Navigation';
+import React from 'react';
 import Hero from './components/Hero';
-import Footer from './components/Footer';
-
-const Why = () => (
-  <div className="why-text">
-    {/* <h1 className="why-title">Why</h1> */}
-    <p className="why-paragraph">
-      Reed was built on a simple observation: the spark of insight from a finished book often fades within weeks. The knowledge people spend hours consuming simply doesn't stick. This isn't a failure of memory, but a failure of method. Passive reading was never designed for long-term retention.
-    </p>
-    <p className="why-paragraph">
-      The app was therefore engineered around a single principle: to truly learn something, one must interact with it. By breaking books down into core concepts and providing tools to challenge, connect, and reflect on those ideas, Reed was designed to transform reading from a passive act of consumption into an active process of understanding. It was created to turn fleeting insights into lasting knowledge.  
-    </p>
-    <div className="why-signature"> 
-      <p className="why-signature-text">
-      - 0to42 Team
-      </p>
-    </div>
-  </div>
-);
 
 export const App = () => {
-  const [route, setRoute] = useState(window.location.hash.replace('#', '') || '/');
+  const Desc = () => (
+    <section style={{background: '#f8f6f2', padding: '6rem 0 4rem 0', textAlign: 'center', fontFamily: 'Newsreader, serif'}}>
+      <div style={{maxWidth: 700, margin: '0 auto'}}>
+        <img 
+          src="/images/book.png" 
+          alt="Translucent Book" 
+          style={{
+            width: '200px',
+            height: 'auto',
+            marginBottom: '3rem',
+            display: 'block',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          }}
+        />
+        <p style={{fontSize: '3rem', color: '#6d5c3d', marginBottom: 32, fontWeight: 400, letterSpacing: '-0.01em'}}>Most of what you read is forgotten.</p>
+        <p style={{fontSize: '3rem', color: '#7d6a4a'}}>It's a failure of method, not memory.</p>
+        <p style={{fontSize: '3rem', color: '#7d6a4a'}}>Reed was built to fix this.</p>
+      </div>
+    </section>
+  );
 
-  useEffect(() => {
-    const onHashChange = () => setRoute(window.location.hash.replace('#', '') || '/');
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
-  }, []);
+  const Footer = () => (
+    <section style={{background: '#181818', padding: '6rem 0 4rem 0', textAlign: 'center', color: '#fff', fontFamily: 'Newsreader, serif'}}>
+      <div style={{maxWidth: 700, margin: '0 auto'}}>
+        <h2 style={{fontSize: '4rem', fontWeight: 700, marginBottom: 24, color: '#fff'}}>REED</h2>
+        <p style={{fontSize: '1.1rem', color: '#e0e0e0', marginBottom: 18}}>Footer</p>
+      </div>
+    </section>
+  );
 
   return (
     <div className="app">
-      <Navigation />
-      {route === '/' ? <Hero /> : null}
-      {route === '/why' ? <Why /> : null}
+      <Hero />
+      <Desc />
       <Footer />
     </div>
   );
