@@ -24,23 +24,28 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
 }
 
 .app {
   min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
   position: relative;
+  background: #f8f6f2;
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f8f6f2;
   padding: 0;
   position: relative;
+  margin: 0;
 }
 
 .reed-logo {
@@ -139,17 +144,114 @@ html, body {
 }
 
 @media (max-width: 600px) {
+  .reed-logo {
+    display: none;
+  }
+  
   .phone-frame { 
-    width: 95vw; 
-    height: 180vw; 
-    max-width: 340px; 
-    max-height: 660px; 
-    padding: 2vw; 
+    width: 210px;
+    height: 434.8px;
+    border-radius: 32px;
+    padding: 8px;
+    margin-bottom: 2rem;
   }
+  
   .phone-screen-img { 
-    border-radius: 6vw; 
+    border-radius: 24px;
   }
+  
   .hero-headline { 
-    font-size: 2rem; 
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
   }
-} 
+  
+  .hero-cta {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+  
+  .hero-phone {
+    margin-top: 5vh;
+  }
+  
+  /* Mobile styles for description section */
+  .description-section {
+    text-align: left !important;
+    padding: 3rem 1rem 2rem 1rem !important;
+  }
+  
+  .description-text {
+    font-size: 2rem !important;
+    text-align: left !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .description-image {
+    width: 120px !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* Description Section Styles */
+.description-section {
+  background: #f8f6f2;
+  padding: 6rem 0 4rem 0;
+  font-family: 'Newsreader', serif;
+  text-align: center;
+}
+
+.description-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.description-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description-text {
+  font-size: 3rem;
+  color: #7d6a4a;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.description-text-main {
+  color: #6d5c3d;
+  margin-bottom: 32px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Footer Section Styles */
+.footer-section {
+  background: #181818;
+  padding: 6rem 0 4rem 0;
+  text-align: center;
+  color: #fff;
+  font-family: 'Newsreader', serif;
+}
+
+.footer-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.footer-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.footer-text {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 18px;
+}
